@@ -1,11 +1,11 @@
 # 沁言学术科研论文 Skills 库
 
-[![Skills](https://img.shields.io/badge/Skills-181-brightgreen.svg)](#skills-分类目录)
+[![Skills](https://img.shields.io/badge/Skills-183-brightgreen.svg)](#skills-分类目录)
 [![Categories](https://img.shields.io/badge/分类-18-blue.svg)](#skills-分类目录)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw-blue.svg)](#支持的工具)
+[![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw_|_Gemini_CLI-blue.svg)](#支持的工具)
 
-面向学术科研的综合性 Skills 集合库，为 AI Agent 提供 181 个学术研究 Skills，覆盖论文检索、科学写作、生物信息、药物发现、临床医学、机器学习等 18 个领域。支持一键安装、搜索、检测更新。
+面向学术科研的综合性 Skills 集合库，为 AI Agent 提供 183 个学术研究 Skills，覆盖论文检索、科学写作、生物信息、药物发现、临床医学、机器学习、国家级基金申报等 18 个领域。支持一键安装、搜索、检测更新。
 
 ### 来源致谢
 
@@ -112,7 +112,7 @@ bash install.sh --help              # 查看帮助
 | 01 | [论文检索与文献管理](#01-论文检索与文献管理) | 10 | 论文搜索、文献检索、引用管理、文献数据库 |
 | 02 | [科学写作与学术交流](#02-科学写作与学术交流) | 6 | 论文写作、同行评审、研究计划、综述撰写 |
 | 03 | [学术演示与可视化](#03-学术演示与可视化) | 9 | 学术海报、演示文稿、科学示意图、数据可视化 |
-| 04 | [研究方法与科学思维](#04-研究方法与科学思维) | 8 | 假设生成、科学头脑风暴、批判性思维、基金申请 |
+| 04 | [研究方法与科学思维](#04-研究方法与科学思维) | 10 | 假设生成、科学头脑风暴、批判性思维、基金申请（含国自然/国社科） |
 | 05 | [生物信息与基因组学](#05-生物信息与基因组学) | 21 | 序列分析、单细胞分析、基因调控网络、变异注释 |
 | 06 | [化学信息与药物发现](#06-化学信息与药物发现) | 12 | 分子操作、虚拟筛选、分子对接、药物化学 |
 | 07 | [临床医学与精准医疗](#07-临床医学与精准医疗) | 18 | 临床试验、变异解读、医学影像、临床决策 |
@@ -127,7 +127,7 @@ bash install.sh --help              # 查看帮助
 | 16 | [地理空间与遥感](#16-地理空间与遥感) | 2 | GIS 分析、卫星遥感、空间统计 |
 | 17 | [平台与基础设施](#17-平台与基础设施) | 4 | 云计算、资源管理、合规认证 |
 
-**总计：181 个 Skills，18 个分类**
+**总计：183 个 Skills，18 个分类**
 
 ---
 
@@ -192,7 +192,9 @@ bash install.sh --help              # 查看帮助
 | consciousness-council | 多视角专家讨论与分析 |
 | dhdna-profiler | 认知模式与思维特征分析 |
 | hypothesis-generation | 科学假设生成 |
-| research-grants | 基金申请写作 |
+| nsfc-proposal | 国家自然科学基金（NSFC）申请书撰写（青基/优青/杰青，2026版规范） |
+| nssfc-proposal | 国家社会科学基金（NSSFC）年度项目申请书撰写（重点/一般/青年/西部，2025版规范，含活页匿名化） |
+| research-grants | 基金申请写作（NSF/NIH/DOE/DARPA/NSTC 海外基金） |
 | scholar-evaluation | 学者评估 |
 | scientific-brainstorming | 科学头脑风暴 |
 | scientific-critical-thinking | 科学批判性思维 |
