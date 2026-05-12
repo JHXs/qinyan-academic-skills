@@ -1,11 +1,17 @@
 # 沁言学术科研论文 Skills 库
 
+> **学术 / 科研 / 论文写作 / 基金申报 一站式 AI Agent Skills 集合**
+> *Academic Research · Paper Writing · Literature Review · Grant Proposal — Skills for AI Coding Agents*
+
 [![Skills](https://img.shields.io/badge/Skills-183-brightgreen.svg)](#skills-分类目录)
 [![Categories](https://img.shields.io/badge/分类-18-blue.svg)](#skills-分类目录)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw_|_Gemini_CLI-blue.svg)](#支持的工具)
+[![中文](https://img.shields.io/badge/语言-中文_/_English-orange.svg)](#)
 
-面向学术科研的综合性 Skills 集合库，为 AI Agent 提供 183 个学术研究 Skills，覆盖论文检索、科学写作、生物信息、药物发现、临床医学、机器学习、国家级基金申报等 18 个领域。支持一键安装、搜索、检测更新。
+面向**学术、科研、论文写作、文献检索、基金申报**的综合性 AI Skills 集合库，为 Claude Code、Cursor、Codex、Gemini CLI、OpenClaw 等 AI 编程 Agent 提供 **183 个开箱即用的学术 Skills**，覆盖论文搜索、科学写作、综述撰写、研究计划、**国家自然科学基金（NSFC）申报**、**国家社会科学基金（NSSFC）申报**、生物信息、药物发现、临床医学、机器学习、数据分析等 **18 个研究领域**。一键安装、按需检索、版本可控。
+
+**适合谁用**：研究生、博士生、青年教师、科研工作者、博士后、申报基金的学者、撰写论文 / 综述 / 研究计划 / 学术海报 / 演示文稿的研究人员；以及需要为团队搭建 AI 科研工作流的高校实验室 / 研究机构。
 
 ### 来源致谢
 
@@ -20,7 +26,7 @@
 ### 一键安装（推荐）
 
 ```bash
-# 安装全部 181 个 Skills（默认安装到 Claude Code）
+# 安装全部 183 个 Skills（默认安装到 Claude Code）
 curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh | bash
 ```
 
@@ -407,6 +413,40 @@ bash install.sh --help              # 查看帮助
 | iso-13485-certification | 医疗器械ISO认证 |
 | modal | Modal云计算平台 |
 | offer-k-dense-web | K-Dense Web平台 |
+
+---
+
+## 适用场景
+
+无论你是**写论文**、做**综述**、申**基金**、还是搭建**实验室 AI 工作流**，本仓库都有对应的 Skills：
+
+| 场景 | 推荐 Skills | 说明 |
+|------|------------|------|
+| 📚 **文献检索 / 论文搜索** | `qinyan-paper-search` · `openalex-database` · `pubmed-database` · `biorxiv-database` · `arxiv` · `parallel-web` · `perplexity-search` | 覆盖 Google Scholar / PubMed / ArXiv / 万方 / bioRxiv / OpenAlex 等主流学术数据库 |
+| ✍️ **论文写作 / 科学写作** | `scientific-writing` · `medical-imaging-review` · `qinyan-paper-polish` · `paper-2-web` · `venue-templates` | 从初稿到投稿模板，含医学影像综述等专题 |
+| 📝 **综述 / 文献综述** | `literature-review` · `medical-imaging-review` · `qinyan-paper-analysis` | 系统化综述工作流，含 7 阶段流程 |
+| 💰 **基金申报 / 课题申请** | `nsfc-proposal`（国自然 NSFC）· `nssfc-proposal`（国社科 NSSFC）· `research-grants`（NSF/NIH/DOE/DARPA） | 中外主流基金体系全覆盖，含 2026/2025 最新规范 |
+| 🎓 **博士申请 / 研究计划** | `research-proposal` · `hypothesis-generation` · `scientific-brainstorming` | Nature Reviews 风格 PhD 研究计划撰写 |
+| 🎨 **学术海报 / 演示** | `latex-posters` · `pptx-posters` · `paper-slide-deck` · `scientific-schematics` · `infographics` | 17 种视觉风格，自动提取论文图表 |
+| 📊 **数据分析 / 统计建模** | `scanpy` · `pydeseq2` · `pyzotero` · 11 分类下全部 Skills | 单细胞 / 差异表达 / 统计 / 网络分析 |
+| 🧬 **生物信息 / 基因组学** | 05 分类下 21 个 Skills | 序列分析、单细胞、调控网络、变异注释 |
+| 💊 **药物发现 / 化学** | 06 分类下 12 个 Skills | 虚拟筛选、分子对接、药物化学 |
+| 🏥 **临床医学 / 精准医疗** | 07 分类下 18 个 Skills | 临床试验、影像、决策支持 |
+| 🤖 **机器学习 / 深度学习** | 09 分类下 14 个 Skills | 深度学习、时间序列、贝叶斯方法 |
+| 🔬 **同行评审 / 投稿** | `peer-review` · `venue-templates` · `scholar-evaluation` | 评审视角、期刊会议模板 |
+| 📖 **引用管理 / Zotero** | `pyzotero` · `citation-management` · `qinyan-citation` | Zotero MCP 集成、引文搜索 |
+
+---
+
+## 关键词索引（Keywords）
+
+本仓库致力于为**学术科研工作者**提供一套**工具中性、可一键安装**的 AI Agent Skills 集合。常见相关搜索词：
+
+**中文**：学术 · 科研 · 论文 · 写作 · 论文写作 · 学术写作 · 科学写作 · 文献 · 文献检索 · 文献综述 · 综述 · 论文检索 · 论文搜索 · 基金 · 基金申报 · 基金 skills · 课题申请 · 国家自然科学基金 · 国自然 · 青年基金 · 优青 · 杰青 · 国家社会科学基金 · 国社科 · 社科基金 · 哲学社会科学 · 研究计划 · 博士申请 · 学术海报 · 演示文稿 · 学术 PPT · 学者评估 · 同行评审 · 学术数据库 · CSSCI · CNKI · 万方 · 知网 · 沁言学术 · 学术 AI · 科研 AI · AI Agent · AI 助手 · 编程助手
+
+**English**: academic · research · paper · scientific writing · literature review · grant proposal · grant writing · research grants · NSFC · NSSFC · funding application · PhD application · research plan · scholarly · scholar · peer review · citation management · zotero · pubmed · arxiv · google scholar · openalex · academic skills · research skills · ai agent skills · claude skills · cursor skills · gemini skills
+
+**适配工具 / Compatible AI Coding Agents**: Claude Code · Cursor · Codex CLI · Gemini CLI · OpenClaw · Anthropic Claude · AI Coding Agent · LLM Agent · Skills Marketplace
 
 ---
 
