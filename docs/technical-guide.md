@@ -62,6 +62,7 @@
 | Codex | `~/.codex/skills/<skill名>/` | `./.codex/skills/<skill名>/` |
 | Gemini CLI | `~/.gemini/skills/<skill名>/` | `./.gemini/skills/<skill名>/` |
 | OpenClaw | `~/.openclaw/skills/<skill名>/` | `./.openclaw/skills/<skill名>/` |
+| OpenCode | `~/.config/opencode/skills/<skill名>/` | `./.opencode/skills/<skill名>/` |
 
 ### 元数据目录
 
@@ -400,6 +401,7 @@ curl -fsSL .../install.sh | bash -s -- --update -s scanpy --force
 ~/.claude/.qinyan-skills/lock.json     ← Claude Code 全局
 ~/.cursor/.qinyan-skills/lock.json     ← Cursor 全局
 ~/.openclaw/.qinyan-skills/lock.json   ← OpenClaw 全局
+~/.config/opencode/.qinyan-skills/lock.json  ← OpenCode 全局
 ./.claude/.qinyan-skills/lock.json     ← 项目级
 ```
 
@@ -636,6 +638,8 @@ curl -fsSL .../install.sh | bash -s -- --tool cursor
 curl -fsSL .../install.sh | bash -s -- --tool gemini -s scanpy
 curl -fsSL .../install.sh | bash -s -- --tool openclaw
 curl -fsSL .../install.sh | bash -s -- --tool openclaw -s scanpy
+curl -fsSL .../install.sh | bash -s -- --tool opencode
+curl -fsSL .../install.sh | bash -s -- --tool opencode -s scanpy
 
 # 安装到当前项目
 curl -fsSL .../install.sh | bash -s -- --project

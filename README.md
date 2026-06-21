@@ -6,7 +6,7 @@
 [![Skills](https://img.shields.io/badge/Skills-183-brightgreen.svg)](#skills-分类目录)
 [![Categories](https://img.shields.io/badge/分类-18-blue.svg)](#skills-分类目录)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw_|_Gemini_CLI-blue.svg)](#支持的工具)
+[![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw_|_Gemini_CLI_|_OpenCode-blue.svg)](#支持的工具)
 [![中文](https://img.shields.io/badge/语言-中文_/_English-orange.svg)](#)
 
 面向**学术、科研、论文写作、文献检索、基金申报**的综合性 AI Skills 集合库，为 Claude Code、Cursor、Codex、Gemini CLI、OpenClaw 等 AI 编程 Agent 提供 **183 个开箱即用的学术 Skills**，覆盖论文搜索、科学写作、综述撰写、研究计划、**国家自然科学基金（NSFC）申报**、**国家社会科学基金（NSSFC）申报**、生物信息、药物发现、临床医学、机器学习、数据分析等 **18 个研究领域**。一键安装、按需检索、版本可控。
@@ -56,6 +56,7 @@ curl -fsSL .../install.sh | bash -s -- --tool cursor
 curl -fsSL .../install.sh | bash -s -- --tool codex
 curl -fsSL .../install.sh | bash -s -- --tool gemini
 curl -fsSL .../install.sh | bash -s -- --tool openclaw
+curl -fsSL .../install.sh | bash -s -- --tool opencode
 
 # 安装到当前项目（而非全局）
 curl -fsSL .../install.sh | bash -s -- --project
@@ -107,6 +108,7 @@ bash install.sh --help              # 查看帮助
 | Codex | `codex` | `~/.codex/skills/` | `.codex/skills/` |
 | Gemini CLI | `gemini` | `~/.gemini/skills/` | `.gemini/skills/` |
 | OpenClaw | `openclaw` | `~/.openclaw/skills/` | `.openclaw/skills/` |
+| OpenCode | `opencode` | `~/.config/opencode/skills/` | `.opencode/skills/` |
 
 ---
 
@@ -446,7 +448,7 @@ bash install.sh --help              # 查看帮助
 
 **English**: academic · research · paper · scientific writing · literature review · grant proposal · grant writing · research grants · NSFC · NSSFC · funding application · PhD application · research plan · scholarly · scholar · peer review · citation management · zotero · pubmed · arxiv · google scholar · openalex · academic skills · research skills · ai agent skills · claude skills · cursor skills · gemini skills
 
-**适配工具 / Compatible AI Coding Agents**: Claude Code · Cursor · Codex CLI · Gemini CLI · OpenClaw · Anthropic Claude · AI Coding Agent · LLM Agent · Skills Marketplace
+**适配工具 / Compatible AI Coding Agents**: Claude Code · Cursor · Codex CLI · Gemini CLI · OpenClaw · OpenCode · Anthropic Claude · AI Coding Agent · LLM Agent · Skills Marketplace
 
 ---
 
