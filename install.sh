@@ -101,7 +101,7 @@ if [ "$MODE" = "help" ]; then
   --category, -c <编号/名称>  安装某个分类 (如: 01, 05, "01-论文检索与文献管理")
   --skill, -s <名称>          安装单个 Skill (如: scanpy, academic-paper-search)
   --project                   安装到当前项目目录 (而非全局)
-  --tool, -t <工具>           指定目标工具: claude(默认), cursor, codex, gemini, openclaw
+  --tool, -t <工具>           指定目标工具: claude(默认), cursor, codex, gemini, openclaw, opencode
 
 浏览选项:
   --list, -l                  列出所有分类
@@ -152,7 +152,15 @@ case $TOOL in
     codex)    SKILLS_DIR=".codex/skills" ;;
     gemini)   SKILLS_DIR=".gemini/skills" ;;
     openclaw) SKILLS_DIR=".openclaw/skills" ;;
-    *)        echo "错误: 不支持的工具 '$TOOL'，可选: claude, cursor, codex, gemini, openclaw"; exit 1 ;;
+    opencode)
+        # OpenCode uses different paths for global vs project
+        if [ "$SCOPE" = "project" ]; then
+            SKILLS_DIR=".opencode/skills"
+        else
+            SKILLS_DIR=".config/opencode/skills"
+        fi
+        ;;
+    *)        echo "错误: 不支持的工具 '$TOOL'，可选: claude, cursor, codex, gemini, openclaw, opencode"; exit 1 ;;
 esac
 
 if [ "$SCOPE" = "project" ]; then
