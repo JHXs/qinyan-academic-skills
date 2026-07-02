@@ -1,0 +1,117 @@
+name: Sync upstream and build skills branch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-and-build-skills
+  cancel-in-progress: false
+
+env:
+  UPSTREAM_REPOSITORY: LeonChaoX/qinyan-academic-skills
+  UPSTREAM_BRANCH: main
+  SKILLS_BRANCH: skills
+
+jobs:
+  sync-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout fork main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Configure git identity
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync fork main from upstream
+        run: |
+          set -euo pipefail
+
+          git remote add upstream "https://github.com/${UPSTREAM_REPOSITORY}.git"
+          git fetch upstream "${UPSTREAM_BRANCH}"
+
+          git merge --no-edit "upstream/${UPSTREAM_BRANCH}"
+
+          git push origin HEAD:main
+
+      - name: Build flat skills tree
+        run: |
+          set -euo pipefail
+
+          rm -rf /tmp/qinyan-flat-skills
+          mkdir -p /tmp/qinyan-flat-skills
+
+          count=0
+
+          while IFS= read -r skill_file; do
+            skill_dir="$(dirname "$skill_file")"
+            skill_name="$(basename "$skill_dir")"
+            target_dir="/tmp/qinyan-flat-skills/$skill_name"
+
+            if [ -e "$target_dir" ]; then
+              echo "Duplicate skill name detected: $skill_name"
+              echo "Existing target: $target_dir"
+              echo "Conflicting source: $skill_dir"
+              exit 1
+            fi
+
+            cp -R "$skill_dir" "$target_dir"
+            count=$((count + 1))
+          done < <(find skills -mindepth 3 -maxdepth 3 -name SKILL.md | sort)
+
+          if [ "$count" -eq 0 ]; then
+            echo "No skills found. Refusing to publish empty ${SKILLS_BRANCH} branch."
+            exit 1
+          fi
+
+          cp README.md /tmp/qinyan-flat-skills/README.md
+          cp LICENSE /tmp/qinyan-flat-skills/LICENSE 2>/dev/null || true
+
+          cat > /tmp/qinyan-flat-skills/GENERATED_BRANCH_NOTICE.md <<EOF
+          # Generated Skills Branch
+
+          This branch is generated automatically from:
+
+          https://github.com/${UPSTREAM_REPOSITORY}
+
+          Source branch: ${UPSTREAM_BRANCH}
+
+          Generated layout:
+
+          \`\`\`
+          <skill-name>/SKILL.md
+          \`\`\`
+
+          Do not edit this branch manually. Changes will be overwritten by GitHub Actions.
+          EOF
+
+          echo "Generated $count skills."
+
+      - name: Publish skills branch
+        run: |
+          set -euo pipefail
+
+          cd /tmp/qinyan-flat-skills
+
+          git init
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add .
+          git commit -m "Build flat skills from upstream ${UPSTREAM_BRANCH}"
+
+          git branch -M "${SKILLS_BRANCH}"
+          git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          git push -f origin "${SKILLS_BRANCH}"
