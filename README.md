@@ -414,7 +414,6 @@ bash install.sh --help              # 查看帮助
 | get-available-resources | 可用资源检测 |
 | iso-13485-certification | 医疗器械ISO认证 |
 | modal | Modal云计算平台 |
-| offer-k-dense-web | K-Dense Web平台 |
 
 ---
 
