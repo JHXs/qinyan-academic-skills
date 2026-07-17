@@ -1,109 +1,96 @@
-# 沁言学术科研论文 Skills 库
+# Qinyan Academic Skills
 
-> **学术 / 科研 / 论文写作 / 基金申报 一站式 AI Agent Skills 集合**
-> *Academic Research · Paper Writing · Literature Review · Grant Proposal — Skills for AI Coding Agents*
+_A curated, installable collection of AI agent skills for research, writing, analysis, and scientific workflows._
 
-[![Skills](https://img.shields.io/badge/Skills-183-brightgreen.svg)](#skills-分类目录)
-[![Categories](https://img.shields.io/badge/分类-18-blue.svg)](#skills-分类目录)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Works with](https://img.shields.io/badge/Works_with-Claude_Code_|_Cursor_|_Codex_|_OpenClaw_|_Gemini_CLI_|_OpenCode-blue.svg)](#支持的工具)
-[![中文](https://img.shields.io/badge/语言-中文_/_English-orange.svg)](#)
+**English** · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
-面向**学术、科研、论文写作、文献检索、基金申报**的综合性 AI Skills 集合库，为 Claude Code、Cursor、Codex、Gemini CLI、OpenClaw 等 AI 编程 Agent 提供 **183 个开箱即用的学术 Skills**，覆盖论文搜索、科学写作、综述撰写、研究计划、**国家自然科学基金（NSFC）申报**、**国家社会科学基金（NSSFC）申报**、生物信息、药物发现、临床医学、机器学习、数据分析等 **18 个研究领域**。一键安装、按需检索、版本可控。
+[![Skills](https://img.shields.io/badge/skills-182-2ea44f.svg)](#-skill-catalog)
+[![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skill-catalog)
+[![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-supported-agents)
+[![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-**适合谁用**：研究生、博士生、青年教师、科研工作者、博士后、申报基金的学者、撰写论文 / 综述 / 研究计划 / 学术海报 / 演示文稿的研究人员；以及需要为团队搭建 AI 科研工作流的高校实验室 / 研究机构。
+Qinyan Academic Skills equips AI coding agents with reusable research capabilities: literature discovery, scientific writing, grant proposals, bioinformatics, drug discovery, clinical research, machine learning, data analysis, and more. The repository currently contains **182 skills across 18 domains**, including five first-party Qinyan Academic skills.
 
-### 来源致谢
-
-- [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — 170+ 科学研究 Skills
-- [luwill/research-skills](https://github.com/luwill/research-skills) — 学术论文 Slide、综述写作、研究计划 Skills
-- 沁言学术自研 Skills（论文搜索、论文分析、论文润色、引文搜索、主题分析）
+Use the complete collection or install only the skill, category, tool, and scope that your workflow needs.
 
 ---
 
-## 快速开始
+## ✨ Highlights
 
-### 一键安装（推荐）
+| Capability | What you get |
+| --- | --- |
+| **Research coverage** | 182 skills spanning literature, writing, life sciences, AI, statistics, databases, and laboratory workflows |
+| **Agent portability** | One installer for Claude Code, Cursor, Codex, Gemini CLI, OpenClaw, and OpenCode |
+| **Selective installation** | Install the full library, one category, or one named skill |
+| **Project isolation** | Choose global installation or keep skills inside a single project |
+| **Lifecycle management** | Search, inspect status, check for updates, and update installed skills |
+| **Version-controlled source** | Every skill is plain text, reviewable, portable, and easy to customize |
+
+---
+
+## 🚀 Quick start
+
+### Install everything
+
+The default target is the global Claude Code skills directory.
 
 ```bash
-# 安装全部 183 个 Skills（默认安装到 Claude Code）
 curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh | bash
 ```
 
-### 按需安装
+> [!NOTE]
+> The installer requires Bash, Git, and `curl`. On Windows, run it in WSL or Git Bash. Review [`install.sh`](./install.sh) before piping it to Bash if your environment requires source inspection.
+
+### Install only what you need
 
 ```bash
-# 安装某个分类（按编号）
-curl -fsSL .../install.sh | bash -s -- -c 01          # 论文检索与文献管理
-curl -fsSL .../install.sh | bash -s -- -c 05          # 生物信息与基因组学
+INSTALLER="https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh"
 
-# 安装单个 Skill
-curl -fsSL .../install.sh | bash -s -- -s scanpy
-curl -fsSL .../install.sh | bash -s -- -s paper-slide-deck
+# Install one category
+curl -fsSL "$INSTALLER" | bash -s -- --category 01
 
-# 安装沁言学术 Skills
-curl -fsSL .../install.sh | bash -s -- -s qinyan-paper-search
-curl -fsSL .../install.sh | bash -s -- -s qinyan-paper-analysis
+# Install one skill
+curl -fsSL "$INSTALLER" | bash -s -- --skill scanpy
+
+# Install into the current project instead of globally
+curl -fsSL "$INSTALLER" | bash -s -- --project --skill scientific-writing
+
+# Target another supported agent
+curl -fsSL "$INSTALLER" | bash -s -- --tool codex
 ```
 
-> 以上命令中 `.../install.sh` 为 `https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh` 的缩写。
+Short forms such as `-c`, `-s`, and `-t` are also supported. Run `bash install.sh --help` for the complete command reference.
 
-### 指定工具 & 作用域
+### Discover and maintain skills
 
 ```bash
-# 安装到不同工具
-curl -fsSL .../install.sh | bash -s -- --tool cursor
-curl -fsSL .../install.sh | bash -s -- --tool codex
-curl -fsSL .../install.sh | bash -s -- --tool gemini
-curl -fsSL .../install.sh | bash -s -- --tool openclaw
-curl -fsSL .../install.sh | bash -s -- --tool opencode
+# Browse and search
+bash install.sh --list
+bash install.sh --list-skills
+bash install.sh --search "protein"
 
-# 安装到当前项目（而非全局）
-curl -fsSL .../install.sh | bash -s -- --project
-curl -fsSL .../install.sh | bash -s -- --project -s scanpy
+# Inspect and update
+bash install.sh --status
+bash install.sh --check-update
+bash install.sh --update
+bash install.sh --update --skill scanpy
 ```
 
-### 搜索与浏览
-
-```bash
-curl -fsSL .../install.sh | bash -s -- --list           # 列出所有分类
-curl -fsSL .../install.sh | bash -s -- --list-skills     # 列出全部 Skills
-curl -fsSL .../install.sh | bash -s -- --search 蛋白质   # 搜索 Skills
-curl -fsSL .../install.sh | bash -s -- --search drug
-```
-
-### 检测更新 & 版本管理
-
-```bash
-curl -fsSL .../install.sh | bash -s -- --check-update    # 检查是否有新版本
-curl -fsSL .../install.sh | bash -s -- --update           # 更新全部
-curl -fsSL .../install.sh | bash -s -- --update -s scanpy # 更新单个
-curl -fsSL .../install.sh | bash -s -- --update --force   # 强制更新（覆盖本地修改）
-curl -fsSL .../install.sh | bash -s -- --status           # 查看已安装状态
-curl -fsSL .../install.sh | bash -s -- --version          # 查看脚本版本
-```
-
-### Git Clone 安装
+### Clone the repository
 
 ```bash
 git clone https://github.com/LeonChaoX/qinyan-academic-skills.git
 cd qinyan-academic-skills
-bash install.sh                    # 安装全部
-bash install.sh -s scanpy          # 安装单个
-bash install.sh -c 05              # 安装分类
-bash install.sh --search 论文      # 搜索
-bash install.sh --check-update     # 检查更新
-bash install.sh --update            # 更新
-bash install.sh --help              # 查看帮助
+bash install.sh --help
 ```
 
 ---
 
-## 支持的工具
+## 🤖 Supported agents
 
-| 工具 | `--tool` 参数 | 全局安装目录 | 项目级安装目录 |
-|------|:----------:|-------------|---------------|
-| Claude Code | `claude`（默认） | `~/.claude/skills/` | `.claude/skills/` |
+| Agent | `--tool` value | Global directory | Project directory |
+| --- | :---: | --- | --- |
+| Claude Code | `claude` (default) | `~/.claude/skills/` | `.claude/skills/` |
 | Cursor | `cursor` | `~/.cursor/skills/` | `.cursor/skills/` |
 | Codex | `codex` | `~/.codex/skills/` | `.codex/skills/` |
 | Gemini CLI | `gemini` | `~/.gemini/skills/` | `.gemini/skills/` |
@@ -112,365 +99,95 @@ bash install.sh --help              # 查看帮助
 
 ---
 
-## Skills 分类目录
+## 🧭 Skill catalog
 
-| 编号 | 分类 | 数量 | 说明 |
-|:----:|------|:----:|------|
-| — | [沁言学术 Skills](#沁言学术-skills) | 5 | 沁言学术自研：论文搜索、论文分析、论文润色、引文搜索、主题分析 |
-| 01 | [论文检索与文献管理](#01-论文检索与文献管理) | 10 | 论文搜索、文献检索、引用管理、文献数据库 |
-| 02 | [科学写作与学术交流](#02-科学写作与学术交流) | 6 | 论文写作、同行评审、研究计划、综述撰写 |
-| 03 | [学术演示与可视化](#03-学术演示与可视化) | 9 | 学术海报、演示文稿、科学示意图、数据可视化 |
-| 04 | [研究方法与科学思维](#04-研究方法与科学思维) | 10 | 假设生成、科学头脑风暴、批判性思维、基金申请（含国自然/国社科） |
-| 05 | [生物信息与基因组学](#05-生物信息与基因组学) | 21 | 序列分析、单细胞分析、基因调控网络、变异注释 |
-| 06 | [化学信息与药物发现](#06-化学信息与药物发现) | 12 | 分子操作、虚拟筛选、分子对接、药物化学 |
-| 07 | [临床医学与精准医疗](#07-临床医学与精准医疗) | 18 | 临床试验、变异解读、医学影像、临床决策 |
-| 08 | [蛋白质工程与结构生物学](#08-蛋白质工程与结构生物学) | 7 | 蛋白质语言模型、结构预测、序列设计 |
-| 09 | [机器学习与人工智能](#09-机器学习与人工智能) | 14 | 深度学习、经典ML、时间序列、贝叶斯方法 |
-| 10 | [材料科学与物理计算](#10-材料科学与物理计算) | 10 | 材料分析、量子计算、天文学、流体仿真 |
-| 11 | [数据分析与统计建模](#11-数据分析与统计建模) | 11 | 统计分析、网络分析、符号数学、数据可视化 |
-| 12 | [科学数据库](#12-科学数据库) | 22 | 蛋白质/化学/基因组/临床等专业数据库 |
-| 13 | [实验室自动化与集成](#13-实验室自动化与集成) | 9 | 液体处理、实验室信息管理、工作流自动化 |
-| 14 | [文档处理与数据工具](#14-文档处理与数据工具) | 7 | PDF/DOCX/PPTX/XLSX 处理、格式转换 |
-| 15 | [金融与经济数据](#15-金融与经济数据) | 6 | SEC 数据、经济数据、市场分析 |
-| 16 | [地理空间与遥感](#16-地理空间与遥感) | 2 | GIS 分析、卫星遥感、空间统计 |
-| 17 | [平台与基础设施](#17-平台与基础设施) | 4 | 云计算、资源管理、合规认证 |
+Each category links directly to its source directory. Use `--list-skills` for the complete list or `--search <term>` to discover skills by name and description.
 
-**总计：183 个 Skills，18 个分类**
+| ID | Category | Skills | Focus |
+| :---: | --- | ---: | --- |
+| — | [Qinyan Academic skills](./skills/沁言学术skills/) | 5 | Paper search, analysis, polishing, citations, and topic analysis |
+| 01 | [Literature discovery and reference management](./skills/01-论文检索与文献管理/) | 10 | Scholarly search, reviews, citation workflows, and literature databases |
+| 02 | [Scientific writing and communication](./skills/02-科学写作与学术交流/) | 6 | Manuscripts, peer review, research proposals, and venue templates |
+| 03 | [Academic presentation and visualization](./skills/03-学术演示与可视化/) | 9 | Slides, posters, schematics, infographics, and scientific figures |
+| 04 | [Research methods and scientific reasoning](./skills/04-研究方法与科学思维/) | 10 | Hypotheses, critical thinking, brainstorming, evaluation, and grants |
+| 05 | [Bioinformatics and genomics](./skills/05-生物信息与基因组学/) | 21 | Sequences, single-cell analysis, regulatory networks, and variants |
+| 06 | [Cheminformatics and drug discovery](./skills/06-化学信息与药物发现/) | 12 | Molecular processing, docking, medicinal chemistry, and simulation |
+| 07 | [Clinical medicine and precision health](./skills/07-临床医学与精准医疗/) | 18 | Trials, clinical reports, imaging, variants, and decision support |
+| 08 | [Protein engineering and structural biology](./skills/08-蛋白质工程与结构生物学/) | 7 | Protein language models, structures, domains, and sequence resources |
+| 09 | [Machine learning and artificial intelligence](./skills/09-机器学习与人工智能/) | 14 | Deep learning, classical ML, forecasting, optimization, and explainability |
+| 10 | [Materials science and computational physics](./skills/10-材料科学与物理计算/) | 10 | Materials, quantum computing, astronomy, fluids, and simulation |
+| 11 | [Data analysis and statistical modeling](./skills/11-数据分析与统计建模/) | 11 | Dataframes, statistics, visualization, graphs, and symbolic mathematics |
+| 12 | [Scientific databases](./skills/12-科学数据库/) | 22 | Chemistry, genes, proteins, pathways, populations, and patents |
+| 13 | [Laboratory automation and integrations](./skills/13-实验室自动化与集成/) | 9 | ELNs, cloud labs, robotics, imaging, and workflow platforms |
+| 14 | [Documents and data tools](./skills/14-文档处理与数据工具/) | 7 | PDF, Word, PowerPoint, spreadsheets, notebooks, and conversion |
+| 15 | [Finance and economic data](./skills/15-金融与经济数据/) | 6 | Markets, filings, fiscal data, economic series, and research reports |
+| 16 | [Geospatial analysis and remote sensing](./skills/16-地理空间与遥感/) | 2 | GIS, satellite imagery, spatial analysis, and remote sensing |
+| 17 | [Platforms and infrastructure](./skills/17-平台与基础设施/) | 3 | Resource discovery, cloud compute, and ISO 13485 readiness |
 
----
+### First-party Qinyan Academic skills
 
-## Skills 详细列表
-
-### 沁言学术 Skills
-
-沁言学术自研的 Skills，通过沁言学术 OpenAPI 提供论文搜索、分析、润色等能力。
-
-| Skill | 说明 |
-|-------|------|
-| qinyan-paper-search | 沁言学术论文搜索（Google Scholar/PubMed/ArXiv/万方） |
-| qinyan-paper-analysis | 沁言学术论文深度分析解读 |
-| qinyan-paper-polish | 沁言学术论文润色与改写 |
-| qinyan-citation | 沁言学术引文搜索 |
-| qinyan-topic-analysis | 沁言学术研究主题分析 |
-
-### 01-论文检索与文献管理
-
-| Skill | 说明 |
-|-------|------|
-| bgpt-paper-search | 结构化全文论文搜索（方法、结果、样本量等25+字段） |
-| biorxiv-database | bioRxiv 预印本数据库 |
-| citation-management | 引用管理工具 |
-| literature-review | 文献综述撰写 |
-| openalex-database | OpenAlex 学术文献数据库 |
-| parallel-web | 并行网络搜索与摘要生成 |
-| perplexity-search | AI驱动的实时信息搜索 |
-| pubmed-database | PubMed 生物医学文献数据库 |
-| pyzotero | Zotero 文献管理Python接口 |
-| research-lookup | 研究发现工具 |
-
-### 02-科学写作与学术交流
-
-| Skill | 说明 |
-|-------|------|
-| medical-imaging-review | 医学影像AI综述写作（7阶段系统化工作流） |
-| paper-2-web | 论文转网页发布 |
-| peer-review | 同行评审工具 |
-| research-proposal | PhD研究计划撰写（支持中英文，Nature Reviews学术写作风格） |
-| scientific-writing | 科学论文写作 |
-| venue-templates | 学术会议/期刊模板 |
-
-### 03-学术演示与可视化
-
-| Skill | 说明 |
-|-------|------|
-| generate-image | AI图像生成（FLUX.2 Pro） |
-| infographics | 专业信息图表制作（10类型，8风格） |
-| latex-posters | LaTeX学术海报 |
-| markdown-mermaid-writing | Mermaid流程图与文档 |
-| paper-slide-deck | 论文自动生成演示文稿（17种视觉风格，自动提取图表） |
-| pptx-posters | PPTX学术海报 |
-| scientific-schematics | 科学示意图绘制 |
-| scientific-slides | 科学报告幻灯片 |
-| scientific-visualization | 科学数据可视化 |
-
-### 04-研究方法与科学思维
-
-| Skill | 说明 |
-|-------|------|
-| consciousness-council | 多视角专家讨论与分析 |
-| dhdna-profiler | 认知模式与思维特征分析 |
-| hypothesis-generation | 科学假设生成 |
-| nsfc-proposal | 国家自然科学基金（NSFC）申请书撰写（青基/优青/杰青，2026版规范） |
-| nssfc-proposal | 国家社会科学基金（NSSFC）年度项目申请书撰写（重点/一般/青年/西部，2025版规范，含活页匿名化） |
-| research-grants | 基金申请写作（NSF/NIH/DOE/DARPA/NSTC 海外基金） |
-| scholar-evaluation | 学者评估 |
-| scientific-brainstorming | 科学头脑风暴 |
-| scientific-critical-thinking | 科学批判性思维 |
-| what-if-oracle | 多分支可能性探索与风险分析 |
-
-### 05-生物信息与基因组学
-
-| Skill | 说明 |
-|-------|------|
-| anndata | 单细胞数据结构 |
-| arboreto | 基因调控网络推断 |
-| biopython | 生物序列分析 |
-| bioservices | 生物信息Web服务（40+数据源） |
-| cellxgene-census | 单细胞数据集 |
-| deeptools | 深度测序分析 |
-| etetoolkit | 进化树分析 |
-| flowio | 流式细胞术数据处理 |
-| geniml | 基因组机器学习 |
-| gget | 基因组数据获取（20+数据库） |
-| gtars | 基因组区域分析 |
-| lamindb | 生物数据管理 |
-| phylogenetics | 系统发育分析 |
-| pydeseq2 | 差异表达分析 |
-| pysam | SAM/BAM文件处理 |
-| scanpy | 单细胞RNA-seq分析 |
-| scikit-bio | 生物信息统计 |
-| scvelo | RNA速率分析 |
-| scvi-tools | 单细胞变分推断 |
-| tiledbvcf | VCF变异数据库管理 |
-| zarr-python | 大规模数组存储 |
-
-### 06-化学信息与药物发现
-
-| Skill | 说明 |
-|-------|------|
-| datamol | 分子数据处理 |
-| deepchem | 药物发现深度学习 |
-| diffdock | 分子对接预测 |
-| matchms | 质谱匹配 |
-| medchem | 药物化学分析 |
-| molecular-dynamics | 分子动力学模拟 |
-| molfeat | 分子特征提取 |
-| pyopenms | 质谱数据处理 |
-| pytdc | 药物发现基准测试 |
-| rdkit | 化学信息学工具包 |
-| rowan | 云端量子化学计算 |
-| torchdrug | 药物发现图神经网络 |
-
-### 07-临床医学与精准医疗
-
-| Skill | 说明 |
-|-------|------|
-| cbioportal-database | 癌症基因组数据库 |
-| clinical-decision-support | 临床决策支持 |
-| clinical-reports | 临床报告生成 |
-| clinicaltrials-database | 临床试验数据库 |
-| clinpgx-database | 药物基因组学数据库 |
-| clinvar-database | 变异致病性数据库 |
-| cosmic-database | 癌症体细胞突变数据库 |
-| depmap | 癌细胞系依赖性数据 |
-| fda-database | FDA药物数据库 |
-| histolab | 组织病理学分析 |
-| imaging-data-commons | 医学影像数据库 |
-| monarch-database | 罕见病数据库 |
-| neurokit2 | 生理信号处理 |
-| neuropixels-analysis | 神经电生理分析 |
-| pathml | 数字病理学 |
-| pydicom | DICOM影像处理 |
-| pyhealth | 健康AI工具 |
-| treatment-plans | 治疗方案设计 |
-
-### 08-蛋白质工程与结构生物学
-
-| Skill | 说明 |
-|-------|------|
-| adaptyv | 蛋白质自动化测试平台 |
-| alphafold-database | AlphaFold蛋白质结构数据库 |
-| esm | 蛋白质语言模型 |
-| glycoengineering | 糖基化工程 |
-| interpro-database | 蛋白质结构域数据库 |
-| pdb-database | 蛋白质结构数据库 |
-| uniprot-database | 蛋白质序列数据库 |
-
-### 09-机器学习与人工智能
-
-| Skill | 说明 |
-|-------|------|
-| aeon | 时间序列分析 |
-| hypogenic | 假设驱动的AI |
-| pymc | 贝叶斯统计建模 |
-| pymoo | 多目标优化 |
-| pufferlib | 强化学习 |
-| pytorch-lightning | PyTorch训练框架 |
-| scikit-learn | 经典机器学习 |
-| scikit-survival | 生存分析 |
-| shap | 模型可解释性 |
-| stable-baselines3 | 强化学习算法 |
-| timesfm-forecasting | 时间序列预测（Google零样本模型） |
-| torch-geometric | 图神经网络 |
-| transformers | Transformer模型 |
-| umap-learn | 降维可视化 |
-
-### 10-材料科学与物理计算
-
-| Skill | 说明 |
-|-------|------|
-| astropy | 天文学计算 |
-| cirq | Google量子电路 |
-| cobrapy | 代谢建模 |
-| fluidsim | 计算流体力学 |
-| matlab | MATLAB/Octave数值计算 |
-| pennylane | 量子机器学习 |
-| pymatgen | 材料科学分析 |
-| qiskit | IBM量子计算 |
-| qutip | 量子系统模拟 |
-| simpy | 离散事件仿真 |
-
-### 11-数据分析与统计建模
-
-| Skill | 说明 |
-|-------|------|
-| dask | 分布式计算 |
-| exploratory-data-analysis | 探索性数据分析 |
-| matplotlib | 绘图库 |
-| networkx | 网络/图分析 |
-| plotly | 交互式可视化 |
-| polars | 高性能数据框 |
-| seaborn | 统计数据可视化 |
-| statistical-analysis | 统计分析工作流 |
-| statsmodels | 统计建模 |
-| sympy | 符号数学计算 |
-| vaex | 大数据懒计算 |
-
-### 12-科学数据库
-
-| Skill | 说明 |
-|-------|------|
-| bindingdb-database | 药物-靶标结合亲和力 |
-| brenda-database | 酶学数据库 |
-| chembl-database | 生物活性分子数据库 |
-| datacommons-client | Google数据公共资源 |
-| drugbank-database | 药物信息数据库 |
-| ena-database | 欧洲核酸数据库 |
-| ensembl-database | 基因组注释数据库 |
-| gene-database | NCBI基因数据库 |
-| geo-database | 基因表达数据库 |
-| gnomad-database | 群体等位基因频率 |
-| gtex-database | 组织特异性表达 |
-| gwas-database | 全基因组关联研究 |
-| hmdb-database | 人类代谢组数据库 |
-| jaspar-database | 转录因子结合位点 |
-| kegg-database | 通路与基因组数据库 |
-| metabolomics-workbench-database | 代谢组学数据库 |
-| opentargets-database | 药物靶标数据库 |
-| pubchem-database | 化学分子数据库 |
-| reactome-database | 生物通路数据库 |
-| string-database | 蛋白质互作网络 |
-| uspto-database | 美国专利数据库 |
-| zinc-database | 可购买化合物数据库 |
-
-### 13-实验室自动化与集成
-
-| Skill | 说明 |
-|-------|------|
-| benchling-integration | Benchling实验室平台 |
-| dnanexus-integration | DNAnexus基因组分析平台 |
-| ginkgo-cloud-lab | 合成生物学云实验室 |
-| labarchive-integration | LabArchives电子实验记录 |
-| latchbio-integration | LatchBio生物信息平台 |
-| omero-integration | 显微镜影像管理 |
-| opentrons-integration | Opentrons液体处理 |
-| protocolsio-integration | Protocols.io实验方案 |
-| pylabrobot | Python实验室机器人 |
-
-### 14-文档处理与数据工具
-
-| Skill | 说明 |
-|-------|------|
-| denario | 研究数据分析流水线 |
-| docx | Word文档处理 |
-| markitdown | 文件格式转Markdown |
-| open-notebook | 开源NotebookLM替代方案 |
-| pdf | PDF文档处理 |
-| pptx | PowerPoint处理 |
-| xlsx | Excel表格处理 |
-
-### 15-金融与经济数据
-
-| Skill | 说明 |
-|-------|------|
-| alpha-vantage | 全球市场数据（股票/外汇/加密货币） |
-| edgartools | SEC财务数据 |
-| fred-economic-data | 美联储经济数据（80万+时间序列） |
-| hedgefundmonitor | 对冲基金系统性风险监控 |
-| market-research-reports | 市场研究报告 |
-| usfiscaldata | 美国联邦财政数据 |
-
-### 16-地理空间与遥感
-
-| Skill | 说明 |
-|-------|------|
-| geopandas | 地理空间数据分析 |
-| geomaster | 遥感/GIS/卫星影像/空间ML（500+示例） |
-
-### 17-平台与基础设施
-
-| Skill | 说明 |
-|-------|------|
-| get-available-resources | 可用资源检测 |
-| iso-13485-certification | 医疗器械ISO认证 |
-| modal | Modal云计算平台 |
-| offer-k-dense-web | K-Dense Web平台 |
+| Skill | Purpose |
+| --- | --- |
+| `qinyan-paper-search` | Search Google Scholar, PubMed, arXiv, and Wanfang through the Qinyan Academic OpenAPI |
+| `qinyan-paper-analysis` | Produce structured, in-depth analysis of individual academic papers |
+| `qinyan-paper-polish` | Improve Chinese and English academic prose while preserving meaning |
+| `qinyan-citation` | Discover sources and format citations in common academic styles |
+| `qinyan-topic-analysis` | Evaluate research topics, evidence landscapes, and promising directions |
 
 ---
 
-## 适用场景
+## 🔬 Research workflows
 
-无论你是**写论文**、做**综述**、申**基金**、还是搭建**实验室 AI 工作流**，本仓库都有对应的 Skills：
+| Goal | Recommended starting points |
+| --- | --- |
+| Literature search and evidence mapping | `qinyan-paper-search`, `openalex-database`, `pubmed-database`, `literature-review` |
+| Manuscript drafting and revision | `scientific-writing`, `qinyan-paper-polish`, `venue-templates`, `peer-review` |
+| Grant and proposal development | `nsfc-proposal`, `nssfc-proposal`, `research-grants`, `research-proposal` |
+| Academic slides and posters | `paper-slide-deck`, `scientific-slides`, `latex-posters`, `pptx-posters` |
+| Bioinformatics and omics | `biopython`, `scanpy`, `pydeseq2`, `scvi-tools`, `gget` |
+| Drug discovery and molecular modeling | `rdkit`, `deepchem`, `diffdock`, `molecular-dynamics`, `rowan` |
+| Statistical analysis and visualization | `statistical-analysis`, `statsmodels`, `polars`, `plotly`, `seaborn` |
+| Clinical and precision medicine | `clinical-decision-support`, `clinicaltrials-database`, `clinvar-database`, `pydicom` |
 
-| 场景 | 推荐 Skills | 说明 |
-|------|------------|------|
-| 📚 **文献检索 / 论文搜索** | `qinyan-paper-search` · `openalex-database` · `pubmed-database` · `biorxiv-database` · `arxiv` · `parallel-web` · `perplexity-search` | 覆盖 Google Scholar / PubMed / ArXiv / 万方 / bioRxiv / OpenAlex 等主流学术数据库 |
-| ✍️ **论文写作 / 科学写作** | `scientific-writing` · `medical-imaging-review` · `qinyan-paper-polish` · `paper-2-web` · `venue-templates` | 从初稿到投稿模板，含医学影像综述等专题 |
-| 📝 **综述 / 文献综述** | `literature-review` · `medical-imaging-review` · `qinyan-paper-analysis` | 系统化综述工作流，含 7 阶段流程 |
-| 💰 **基金申报 / 课题申请** | `nsfc-proposal`（国自然 NSFC）· `nssfc-proposal`（国社科 NSSFC）· `research-grants`（NSF/NIH/DOE/DARPA） | 中外主流基金体系全覆盖，含 2026/2025 最新规范 |
-| 🎓 **博士申请 / 研究计划** | `research-proposal` · `hypothesis-generation` · `scientific-brainstorming` | Nature Reviews 风格 PhD 研究计划撰写 |
-| 🎨 **学术海报 / 演示** | `latex-posters` · `pptx-posters` · `paper-slide-deck` · `scientific-schematics` · `infographics` | 17 种视觉风格，自动提取论文图表 |
-| 📊 **数据分析 / 统计建模** | `scanpy` · `pydeseq2` · `pyzotero` · 11 分类下全部 Skills | 单细胞 / 差异表达 / 统计 / 网络分析 |
-| 🧬 **生物信息 / 基因组学** | 05 分类下 21 个 Skills | 序列分析、单细胞、调控网络、变异注释 |
-| 💊 **药物发现 / 化学** | 06 分类下 12 个 Skills | 虚拟筛选、分子对接、药物化学 |
-| 🏥 **临床医学 / 精准医疗** | 07 分类下 18 个 Skills | 临床试验、影像、决策支持 |
-| 🤖 **机器学习 / 深度学习** | 09 分类下 14 个 Skills | 深度学习、时间序列、贝叶斯方法 |
-| 🔬 **同行评审 / 投稿** | `peer-review` · `venue-templates` · `scholar-evaluation` | 评审视角、期刊会议模板 |
-| 📖 **引用管理 / Zotero** | `pyzotero` · `citation-management` · `qinyan-citation` | Zotero MCP 集成、引文搜索 |
+> [!TIP]
+> Start with one focused skill, inspect its `SKILL.md`, and combine skills only when the research workflow genuinely needs multiple capabilities.
 
 ---
 
-## 关键词索引（Keywords）
+## 📖 Documentation
 
-本仓库致力于为**学术科研工作者**提供一套**工具中性、可一键安装**的 AI Agent Skills 集合。常见相关搜索词：
-
-**中文**：学术 · 科研 · 论文 · 写作 · 论文写作 · 学术写作 · 科学写作 · 文献 · 文献检索 · 文献综述 · 综述 · 论文检索 · 论文搜索 · 基金 · 基金申报 · 基金 skills · 课题申请 · 国家自然科学基金 · 国自然 · 青年基金 · 优青 · 杰青 · 国家社会科学基金 · 国社科 · 社科基金 · 哲学社会科学 · 研究计划 · 博士申请 · 学术海报 · 演示文稿 · 学术 PPT · 学者评估 · 同行评审 · 学术数据库 · CSSCI · CNKI · 万方 · 知网 · 沁言学术 · 学术 AI · 科研 AI · AI Agent · AI 助手 · 编程助手
-
-**English**: academic · research · paper · scientific writing · literature review · grant proposal · grant writing · research grants · NSFC · NSSFC · funding application · PhD application · research plan · scholarly · scholar · peer review · citation management · zotero · pubmed · arxiv · google scholar · openalex · academic skills · research skills · ai agent skills · claude skills · cursor skills · gemini skills
-
-**适配工具 / Compatible AI Coding Agents**: Claude Code · Cursor · Codex CLI · Gemini CLI · OpenClaw · OpenCode · Anthropic Claude · AI Coding Agent · LLM Agent · Skills Marketplace
+- [Technical guide](./docs/technical-guide.md) — installer architecture, search, update detection, and version management
+- [`install.sh --help`](./install.sh) — complete CLI options and examples
+- [`skills/`](./skills/) — canonical source for every skill
 
 ---
 
-## 技术文档
+## 🙏 Sources and attribution
 
-详见 [docs/technical-guide.md](docs/technical-guide.md)，包含搜索、检测更新、更新机制的完整技术原理。
+This collection combines first-party Qinyan Academic skills with carefully organized skills derived from the following open-source projects:
 
----
+- [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — broad scientific research skill collection
+- [luwill/research-skills](https://github.com/luwill/research-skills) — academic slides, literature reviews, and research planning workflows
+- Qinyan Academic — paper search, paper analysis, academic polishing, citation discovery, and topic analysis
 
-## 贡献
-
-欢迎提交 Pull Request！
-
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/new-skill`)
-3. 将新 Skill 放入对应的分类目录下，确保包含 `SKILL.md`
-4. 提交 Pull Request
+Attribution and license metadata for an individual skill remain in that skill's `SKILL.md`.
 
 ---
 
-## License
+## 🤝 Contributing
 
-MIT License - 详见 [LICENSE](LICENSE) 文件
+Contributions that improve skills, translations, documentation, and installer compatibility are welcome.
 
-> 每个 Skill 可能有自己的许可证，详见各 Skill 的 `SKILL.md` 中的 `license` 字段。
+1. Fork the repository and create a focused branch from `main`
+2. Add or update a skill in the appropriate category, keeping `SKILL.md` as its entry point
+3. Update affected documentation and translations
+4. Validate links, commands, and formatting
+5. Open a pull request with a clear description of the change and its impact
+
+When changing shared facts such as counts, supported tools, or CLI flags, update all five README files in the same pull request.
+
+---
+
+## 📄 License
+
+The repository is distributed under the [MIT License](./LICENSE). Individual skills may declare additional or different terms in their `SKILL.md`; review those terms before redistribution or commercial use.
