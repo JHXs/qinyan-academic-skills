@@ -1,17 +1,44 @@
-# Qinyan Academic Skills
+# Qinyan Academic Skills — Nature-style scientific writing workflows
 
-_A curated, installable collection of AI agent skills for research, writing, analysis, and scientific workflows._
+_187 installable AI agent skills for academic research, featuring a first-party Nature-style suite for scientific writing, manuscript polishing, peer review, publication figures, and statistics._
 
 **English** · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skill-catalog)
+[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skill-catalog)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-supported-agents)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-Qinyan Academic Skills equips AI coding agents with reusable research capabilities: literature discovery, scientific writing, grant proposals, bioinformatics, drug discovery, clinical research, machine learning, data analysis, and more. The repository currently contains **187 skills across 18 domains**, including ten first-party Qinyan Academic skills.
+Qinyan Academic Skills equips Claude Code, Codex, Cursor, Gemini CLI, OpenClaw, and OpenCode with reusable research capabilities. The repository contains **187 skills across 18 domains**, including a five-skill workflow for Nature-style scientific writing, academic editing, pre-submission review, scientific visualization, and statistical reporting.
 
 Use the complete collection or install only the skill, category, tool, and scope that your workflow needs.
+
+---
+
+## 🧬 Nature-style scientific writing suite
+
+Move from a defensible scientific claim to a submission-ready manuscript with five focused, composable skills:
+
+| Manuscript stage | Skill | Primary output |
+| --- | --- | --- |
+| Argument and drafting | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | Evidence-led narrative, section drafts, title, abstract, and submission package |
+| Structural and language revision | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | Concise academic prose with meaning-preservation and anti-overclaim checks |
+| Pre-submission assessment | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | Prioritized, traceable review findings with stable issue identifiers |
+| Figures and visual evidence | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | Reproducible multi-panel figures with export and preflight validation |
+| Study design and statistics | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | Estimand-aware analysis plans, reporting audits, and figure-ready results |
+
+Install one skill:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+Or [explore the complete Nature skills workflow](./NATURE-SKILLS.md), including routing guidance, installation commands, quality gates, and example prompts.
+
+> [!NOTE]
+> “Nature-style” describes editorial and scientific communication goals. This independent project is not affiliated with, endorsed by, or guaranteed acceptance by Nature Portfolio or Springer Nature.
 
 ---
 

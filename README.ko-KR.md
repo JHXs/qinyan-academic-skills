@@ -1,17 +1,44 @@
-# Qinyan Academic Skills
+# Qinyan Academic Skills — Nature 스타일 과학 논문 워크플로
 
-_연구, 집필, 분석 및 과학 워크플로를 위한 엄선된 설치형 AI Agent Skills 모음입니다._
+_학술 연구를 위한 187개의 설치형 AI Agent Skills와 Nature 스타일 과학 글쓰기, 논문 윤문, 투고 전 리뷰, 과학 그림 및 통계를 위한 자체 개발 스위트입니다._
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · **한국어**
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-스킬-카탈로그)
+[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-스킬-카탈로그)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-지원-에이전트)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-Qinyan Academic Skills는 문헌 탐색, 과학 논문 작성, 연구비 제안서, 생물정보학, 신약 개발, 임상 연구, 머신러닝, 데이터 분석 등 재사용 가능한 연구 역량을 AI 코딩 에이전트에 제공합니다. 이 저장소에는 Qinyan Academic이 자체 개발한 10개 Skills를 포함하여 **18개 분야의 187개 Skills**가 수록되어 있습니다.
+Qinyan Academic Skills는 Claude Code, Codex, Cursor, Gemini CLI, OpenClaw 및 OpenCode에 재사용 가능한 연구 역량을 제공합니다. 이 저장소에는 **18개 분야의 187개 Skills**가 있으며, 그중 5개는 Nature 스타일 과학 논문 작성, 학술 윤문, 투고 전 리뷰, 과학 시각화 및 통계 보고를 위한 통합 워크플로입니다.
 
 전체 모음을 설치하거나 현재 워크플로에 필요한 Skill, 카테고리, 대상 도구와 설치 범위만 선택할 수 있습니다.
+
+---
+
+## 🧬 Nature 스타일 과학 논문 스위트
+
+검증 가능한 과학적 주장부터 투고 준비가 완료된 원고까지, 독립적으로 또는 함께 사용할 수 있는 5개 Skills가 지원합니다.
+
+| 논문 단계 | Skill | 주요 결과물 |
+| --- | --- | --- |
+| 논증과 초안 | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | 근거 중심 서사, 섹션 초안, 제목, 초록 및 투고 자료 |
+| 구조 및 문장 윤문 | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | 과학적 의미를 보존하고 과도한 주장을 점검한 간결한 학술 문장 |
+| 투고 전 리뷰 | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | 안정적인 이슈 ID가 포함된 우선순위 기반의 추적 가능한 리뷰 |
+| 그림과 시각적 근거 | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | 재현 가능한 다중 패널 그림, 규격 내보내기 및 투고 전 검사 |
+| 연구 설계와 통계 | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | 추정 대상 중심 분석 계획, 보고 감사 및 그림용 결과 |
+
+하나의 Skill 설치:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+작업 라우팅, 설치 명령, 품질 기준 및 예시 프롬프트는 [전체 Nature Skills 워크플로 가이드](./NATURE-SKILLS.md)를 확인하세요.
+
+> [!NOTE]
+> “Nature 스타일”은 편집 및 과학 커뮤니케이션 목표를 의미합니다. 이 독립 프로젝트는 Nature Portfolio 또는 Springer Nature와 제휴하거나 보증받지 않았으며 논문 게재를 보장하지 않습니다.
 
 ---
 

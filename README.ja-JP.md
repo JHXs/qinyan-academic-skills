@@ -1,17 +1,44 @@
-# Qinyan Academic Skills
+# Qinyan Academic Skills — Nature スタイル科学論文ワークフロー
 
-_研究、執筆、分析、科学ワークフローのための、厳選されたインストール可能な AI Agent Skills コレクション。_
+_学術研究向けのインストール可能な 187 AI Agent Skills。Nature スタイルの科学論文執筆、推敲、投稿前レビュー、図表、統計解析に対応する独自スイートを収録。_
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · **日本語** · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-スキルカタログ)
+[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-スキルカタログ)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-対応エージェント)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-Qinyan Academic Skills は、文献探索、科学論文執筆、研究費申請、バイオインフォマティクス、創薬、臨床研究、機械学習、データ分析など、再利用可能な研究能力を AI コーディングエージェントに提供します。本リポジトリには、Qinyan Academic 独自の 10 Skills を含む、**18 分野・187 Skills** が収録されています。
+Qinyan Academic Skills は、Claude Code、Codex、Cursor、Gemini CLI、OpenClaw、OpenCode に再利用可能な研究能力を提供します。本リポジトリには **18 分野・187 Skills** を収録し、その中核として Nature スタイルの科学論文執筆、学術推敲、投稿前レビュー、科学可視化、統計報告を担う 5 Skills を提供します。
 
 コレクション全体のほか、ワークフローに必要な Skill、カテゴリ、対象ツール、インストール範囲だけを選択できます。
+
+---
+
+## 🧬 Nature スタイル科学論文スイート
+
+検証可能な科学的主張から投稿可能な原稿まで、独立または組み合わせて使える 5 Skills が支援します。
+
+| 論文工程 | Skill | 主な成果物 |
+| --- | --- | --- |
+| 論証と初稿 | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | エビデンス主導の構成、各節の草稿、タイトル、要旨、投稿資料 |
+| 構成と言語の推敲 | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | 科学的意味を保ち、過剰主張を抑えた簡潔な学術文章 |
+| 投稿前レビュー | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | 安定した課題 ID を持つ、優先順位付きで追跡可能な指摘 |
+| 図と視覚的エビデンス | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | 再現可能な複数パネル図、適切な書き出し、投稿前検査 |
+| 研究設計と統計 | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | 推定対象を明確にした解析計画、報告監査、図表用結果 |
+
+Skill を 1 つインストール：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+タスクの振り分け、インストール方法、品質基準、プロンプト例は、[Nature Skills ワークフロー完全ガイド](./NATURE-SKILLS.md)を参照してください。
+
+> [!NOTE]
+> 「Nature スタイル」は編集および科学コミュニケーション上の目標を示します。本プロジェクトは Nature Portfolio または Springer Nature と提携・承認関係になく、掲載を保証するものではありません。
 
 ---
 
