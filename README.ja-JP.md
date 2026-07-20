@@ -5,7 +5,7 @@ _学術研究向けのインストール可能な 187 AI Agent Skills。Nature �
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · **日本語** · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-スキルカタログ)
-[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
+[![Nature skills: 5 workflows](https://img.shields.io/badge/Nature%20skills-5%20workflows-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-スキルカタログ)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-対応エージェント)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)

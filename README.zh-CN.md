@@ -5,7 +5,7 @@ _187 个可安装 AI Agent Skills，重点提供 Nature 风格科学写作、论
 [English](./README.md) · **简体中文** · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skills-分类)
-[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
+[![Nature skills: 5 workflows](https://img.shields.io/badge/Nature%20skills-5%20workflows-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skills-分类)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-支持的-agent)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
