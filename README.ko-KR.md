@@ -5,7 +5,7 @@ _학술 연구를 위한 187개의 설치형 AI Agent Skills와 Nature 스타일
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · **한국어**
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-스킬-카탈로그)
-[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
+[![Nature skills: 5 workflows](https://img.shields.io/badge/Nature%20skills-5%20workflows-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-스킬-카탈로그)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-지원-에이전트)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
