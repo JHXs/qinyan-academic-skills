@@ -4,12 +4,12 @@ _面向科研、写作、分析与科学工作流的精选可安装 AI Agent Ski
 
 [English](./README.md) · **简体中文** · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
-[![Skills](https://img.shields.io/badge/skills-182-2ea44f.svg)](#-skills-分类)
+[![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skills-分类)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skills-分类)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-支持的-agent)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-沁言学术科研 Skills 为 AI 编程 Agent 提供可复用的科研能力，覆盖文献检索、科学写作、基金申报、生物信息、药物发现、临床研究、机器学习、数据分析等方向。仓库目前收录 **18 个领域的 182 个 Skills**，其中包含 5 个沁言学术自研 Skills。
+沁言学术科研 Skills 为 AI 编程 Agent 提供可复用的科研能力，覆盖文献检索、科学写作、基金申报、生物信息、药物发现、临床研究、机器学习、数据分析等方向。仓库目前收录 **18 个领域的 187 个 Skills**，其中包含 10 个沁言学术自研 Skills。
 
 你可以安装完整集合，也可以只安装当前工作流所需的单个 Skill、分类、目标工具与作用域。
 
@@ -19,7 +19,7 @@ _面向科研、写作、分析与科学工作流的精选可安装 AI Agent Ski
 
 | 能力 | 说明 |
 | --- | --- |
-| **广泛科研覆盖** | 182 个 Skills，覆盖文献、写作、生命科学、AI、统计、数据库和实验室工作流 |
+| **广泛科研覆盖** | 187 个 Skills，覆盖文献、写作、生命科学、AI、统计、数据库和实验室工作流 |
 | **跨 Agent 使用** | 同一安装器支持 Claude Code、Cursor、Codex、Gemini CLI、OpenClaw 和 OpenCode |
 | **按需安装** | 可安装完整集合、单个分类或指定 Skill |
 | **项目级隔离** | 可选择全局安装，也可仅安装到当前项目 |
@@ -105,7 +105,7 @@ bash install.sh --help
 
 | 编号 | 分类 | 数量 | 重点能力 |
 | :---: | --- | ---: | --- |
-| — | [沁言学术 Skills](./skills/沁言学术skills/) | 5 | 论文搜索、分析、润色、引文和选题分析 |
+| — | [沁言学术 Skills](./skills/沁言学术skills/) | 10 | 论文搜索、分析、引文，以及 Nature 导向的写作、预审、绘图与统计 |
 | 01 | [论文检索与文献管理](./skills/01-论文检索与文献管理/) | 10 | 学术搜索、综述、引用工作流和文献数据库 |
 | 02 | [科学写作与学术交流](./skills/02-科学写作与学术交流/) | 6 | 论文写作、同行评审、研究计划和投稿模板 |
 | 03 | [学术演示与可视化](./skills/03-学术演示与可视化/) | 9 | 幻灯片、海报、科学示意图、信息图和科研绘图 |
@@ -133,6 +133,11 @@ bash install.sh --help
 | `qinyan-paper-polish` | 在保持原意的前提下优化中英文学术表达 |
 | `qinyan-citation` | 检索文献并按常见学术格式生成引用 |
 | `qinyan-topic-analysis` | 分析研究选题、证据版图和潜在方向 |
+| `qinyan-nature-writing` | 以证据链构建论文论证、章节和首次投稿材料 |
+| `qinyan-nature-polishing` | 在不改变科学含义的前提下重构、翻译与精修文本 |
+| `qinyan-nature-review` | 从概念、技术和证据视角开展可追溯投稿前预审 |
+| `qinyan-nature-figures` | 设计、导出并预检可复现的投稿级科研图件 |
+| `qinyan-nature-statistics` | 进行设计感知的统计规划、分析、审查与报告 |
 
 ---
 
@@ -141,7 +146,7 @@ bash install.sh --help
 | 目标 | 推荐从这些 Skills 开始 |
 | --- | --- |
 | 文献检索与证据梳理 | `qinyan-paper-search`、`openalex-database`、`pubmed-database`、`literature-review` |
-| 论文撰写与修订 | `scientific-writing`、`qinyan-paper-polish`、`venue-templates`、`peer-review` |
+| 论文撰写与修订 | `qinyan-nature-writing`、`qinyan-nature-polishing`、`qinyan-nature-review`、`venue-templates` |
 | 基金与研究计划 | `nsfc-proposal`、`nssfc-proposal`、`research-grants`、`research-proposal` |
 | 学术幻灯片与海报 | `paper-slide-deck`、`scientific-slides`、`latex-posters`、`pptx-posters` |
 | 生物信息与组学 | `biopython`、`scanpy`、`pydeseq2`、`scvi-tools`、`gget` |
@@ -168,6 +173,7 @@ bash install.sh --help
 
 - [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — 综合科学研究 Skills 集合
 - [luwill/research-skills](https://github.com/luwill/research-skills) — 学术幻灯片、文献综述和研究计划工作流
+- [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) — 提供 Nature 导向科研工作流的 Apache-2.0 架构启发；沁言套件为独立重写
 - 沁言学术 — 论文搜索、论文分析、学术润色、引文检索和选题分析
 
 每个 Skill 的来源与许可证元数据保留在对应的 `SKILL.md` 中。
