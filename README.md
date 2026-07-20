@@ -4,12 +4,12 @@ _A curated, installable collection of AI agent skills for research, writing, ana
 
 **English** · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
-[![Skills](https://img.shields.io/badge/skills-182-2ea44f.svg)](#-skill-catalog)
+[![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skill-catalog)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skill-catalog)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-supported-agents)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-Qinyan Academic Skills equips AI coding agents with reusable research capabilities: literature discovery, scientific writing, grant proposals, bioinformatics, drug discovery, clinical research, machine learning, data analysis, and more. The repository currently contains **182 skills across 18 domains**, including five first-party Qinyan Academic skills.
+Qinyan Academic Skills equips AI coding agents with reusable research capabilities: literature discovery, scientific writing, grant proposals, bioinformatics, drug discovery, clinical research, machine learning, data analysis, and more. The repository currently contains **187 skills across 18 domains**, including ten first-party Qinyan Academic skills.
 
 Use the complete collection or install only the skill, category, tool, and scope that your workflow needs.
 
@@ -19,7 +19,7 @@ Use the complete collection or install only the skill, category, tool, and scope
 
 | Capability | What you get |
 | --- | --- |
-| **Research coverage** | 182 skills spanning literature, writing, life sciences, AI, statistics, databases, and laboratory workflows |
+| **Research coverage** | 187 skills spanning literature, writing, life sciences, AI, statistics, databases, and laboratory workflows |
 | **Agent portability** | One installer for Claude Code, Cursor, Codex, Gemini CLI, OpenClaw, and OpenCode |
 | **Selective installation** | Install the full library, one category, or one named skill |
 | **Project isolation** | Choose global installation or keep skills inside a single project |
@@ -105,7 +105,7 @@ Each category links directly to its source directory. Use `--list-skills` for th
 
 | ID | Category | Skills | Focus |
 | :---: | --- | ---: | --- |
-| — | [Qinyan Academic skills](./skills/沁言学术skills/) | 5 | Paper search, analysis, polishing, citations, and topic analysis |
+| — | [Qinyan Academic skills](./skills/沁言学术skills/) | 10 | Paper search, analysis, citations, and Nature-focused writing, review, figures, and statistics |
 | 01 | [Literature discovery and reference management](./skills/01-论文检索与文献管理/) | 10 | Scholarly search, reviews, citation workflows, and literature databases |
 | 02 | [Scientific writing and communication](./skills/02-科学写作与学术交流/) | 6 | Manuscripts, peer review, research proposals, and venue templates |
 | 03 | [Academic presentation and visualization](./skills/03-学术演示与可视化/) | 9 | Slides, posters, schematics, infographics, and scientific figures |
@@ -133,6 +133,11 @@ Each category links directly to its source directory. Use `--list-skills` for th
 | `qinyan-paper-polish` | Improve Chinese and English academic prose while preserving meaning |
 | `qinyan-citation` | Discover sources and format citations in common academic styles |
 | `qinyan-topic-analysis` | Evaluate research topics, evidence landscapes, and promising directions |
+| `qinyan-nature-writing` | Build evidence-led manuscript arguments, sections, and initial-submission materials |
+| `qinyan-nature-polishing` | Restructure, translate, and polish academic prose without changing scientific meaning |
+| `qinyan-nature-review` | Run traceable pre-submission review through conceptual, technical, and evidence lenses |
+| `qinyan-nature-figures` | Design, export, and preflight reproducible publication figures |
+| `qinyan-nature-statistics` | Plan, analyse, audit, and report design-aware manuscript statistics |
 
 ---
 
@@ -141,7 +146,7 @@ Each category links directly to its source directory. Use `--list-skills` for th
 | Goal | Recommended starting points |
 | --- | --- |
 | Literature search and evidence mapping | `qinyan-paper-search`, `openalex-database`, `pubmed-database`, `literature-review` |
-| Manuscript drafting and revision | `scientific-writing`, `qinyan-paper-polish`, `venue-templates`, `peer-review` |
+| Manuscript drafting and revision | `qinyan-nature-writing`, `qinyan-nature-polishing`, `qinyan-nature-review`, `venue-templates` |
 | Grant and proposal development | `nsfc-proposal`, `nssfc-proposal`, `research-grants`, `research-proposal` |
 | Academic slides and posters | `paper-slide-deck`, `scientific-slides`, `latex-posters`, `pptx-posters` |
 | Bioinformatics and omics | `biopython`, `scanpy`, `pydeseq2`, `scvi-tools`, `gget` |
@@ -168,6 +173,7 @@ This collection combines first-party Qinyan Academic skills with carefully organ
 
 - [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — broad scientific research skill collection
 - [luwill/research-skills](https://github.com/luwill/research-skills) — academic slides, literature reviews, and research planning workflows
+- [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) — Apache-2.0 architectural inspiration for Nature-focused workflows; the Qinyan suite is independently rewritten
 - Qinyan Academic — paper search, paper analysis, academic polishing, citation discovery, and topic analysis
 
 Attribution and license metadata for an individual skill remain in that skill's `SKILL.md`.
