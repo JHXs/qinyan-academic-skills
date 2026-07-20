@@ -1,17 +1,44 @@
-# 沁言學術科研 Skills
+# 沁言學術科研 Skills — Nature 風格論文寫作工作流程
 
-_面向研究、寫作、分析與科學工作流程的精選可安裝 AI Agent Skills 集合。_
+_187 個可安裝 AI Agent Skills，重點提供 Nature 風格科學寫作、論文潤飾、投稿前評閱、科研繪圖與統計分析工作流程。_
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · **繁體中文** · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skills-分類)
+[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skills-分類)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-支援的-agent)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-沁言學術科研 Skills 為 AI 程式設計 Agent 提供可重複使用的研究能力，涵蓋文獻檢索、科學寫作、研究計畫、生物資訊、藥物發現、臨床研究、機器學習與資料分析等領域。本儲存庫目前收錄 **18 個領域的 187 個 Skills**，其中包含 10 個沁言學術自研 Skills。
+沁言學術科研 Skills 為 Claude Code、Codex、Cursor、Gemini CLI、OpenClaw 與 OpenCode 提供可重複使用的研究能力。本儲存庫收錄 **18 個領域的 187 個 Skills**，其中包含一套由五個 Skills 組成的 Nature 風格科學寫作、學術潤飾、投稿前評閱、科學視覺化與統計報告工作流程。
 
 你可以安裝完整集合，也可以只安裝目前工作流程所需的單一 Skill、分類、目標工具與作用域。
+
+---
+
+## 🧬 Nature 風格科學寫作套件
+
+從可辯護的科學主張出發，透過五個可獨立使用、也可組合呼叫的 Skills 完成投稿級論文工作流程：
+
+| 論文階段 | Skill | 核心產出 |
+| --- | --- | --- |
+| 論證與初稿 | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | 證據導向的敘事結構、章節初稿、標題、摘要與投稿材料 |
+| 結構與語言精修 | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | 簡潔專業且保持原意的學術文字，並檢查過度推論 |
+| 投稿前評閱 | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | 依優先順序組織、具穩定問題編號的可追溯評閱意見 |
+| 科研圖件與視覺證據 | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | 可重現多面板圖件、規範匯出與投稿前預檢 |
+| 研究設計與統計 | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | 目標量導向的分析方案、報告稽核與視覺化結果 |
+
+安裝單一 Skill：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+查看[完整 Nature Skills 工作流程指南](./NATURE-SKILLS.md)，取得任務路由、安裝命令、品質門檻與範例提示詞。
+
+> [!NOTE]
+> 「Nature 風格」描述的是編輯與科學傳播目標。本專案為獨立專案，與 Nature Portfolio 或 Springer Nature 無隸屬或背書關係，也不保證論文獲得接受。
 
 ---
 

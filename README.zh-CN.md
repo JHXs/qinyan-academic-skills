@@ -1,17 +1,44 @@
-# 沁言学术科研 Skills
+# 沁言学术科研 Skills — Nature 风格论文写作工作流
 
-_面向科研、写作、分析与科学工作流的精选可安装 AI Agent Skills 集合。_
+_187 个可安装 AI Agent Skills，重点提供 Nature 风格科学写作、论文润色、投稿前评审、科研绘图与统计分析工作流。_
 
 [English](./README.md) · **简体中文** · [繁體中文](./README.zh-TW.md) · [日本語](./README.ja-JP.md) · [한국어](./README.ko-KR.md)
 
 [![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-skills-分类)
+[![Nature workflow](https://img.shields.io/badge/Nature--style-workflow-5-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-skills-分类)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-支持的-agent)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-沁言学术科研 Skills 为 AI 编程 Agent 提供可复用的科研能力，覆盖文献检索、科学写作、基金申报、生物信息、药物发现、临床研究、机器学习、数据分析等方向。仓库目前收录 **18 个领域的 187 个 Skills**，其中包含 10 个沁言学术自研 Skills。
+沁言学术科研 Skills 为 Claude Code、Codex、Cursor、Gemini CLI、OpenClaw 和 OpenCode 提供可复用的科研能力。仓库收录 **18 个领域的 187 个 Skills**，其中包含一套由五个 Skills 组成的 Nature 风格科学写作、学术润色、投稿前评审、科学可视化与统计报告工作流。
 
 你可以安装完整集合，也可以只安装当前工作流所需的单个 Skill、分类、目标工具与作用域。
+
+---
+
+## 🧬 Nature 风格科学写作套件
+
+从可辩护的科学主张出发，通过五个可独立使用、也可组合调用的 Skills 完成投稿级论文工作流：
+
+| 论文阶段 | Skill | 核心产物 |
+| --- | --- | --- |
+| 论证与初稿 | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | 证据驱动的叙事结构、章节初稿、标题、摘要与投稿材料 |
+| 结构与语言精修 | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | 简洁专业且保持原意的学术文本，并检查过度推断 |
+| 投稿前评审 | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | 按优先级组织、具有稳定问题编号的可追溯审稿意见 |
+| 科研图件与视觉证据 | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | 可复现多面板图件、规范导出与投稿前预检 |
+| 研究设计与统计 | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | 目标量导向的分析方案、报告审计与可视化结果 |
+
+安装单个 Skill：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+查看[完整 Nature Skills 工作流指南](./NATURE-SKILLS.md)，获取任务路由、安装命令、质量门槛和示例提示词。
+
+> [!NOTE]
+> “Nature 风格”描述的是编辑与科学传播目标。本项目为独立项目，与 Nature Portfolio 或 Springer Nature 无隶属或背书关系，也不承诺论文接收。
 
 ---
 
