@@ -1,17 +1,44 @@
-# Qinyan Academic Skills
+# Qinyan Academic Skills — Nature スタイル科学論文ワークフロー
 
-_研究、執筆、分析、科学ワークフローのための、厳選されたインストール可能な AI Agent Skills コレクション。_
+_学術研究向けのインストール可能な 187 AI Agent Skills。Nature スタイルの科学論文執筆、推敲、投稿前レビュー、図表、統計解析に対応する独自スイートを収録。_
 
 [English](./README.md) · [简体中文](./README.zh-CN.md) · [繁體中文](./README.zh-TW.md) · **日本語** · [한국어](./README.ko-KR.md)
 
-[![Skills](https://img.shields.io/badge/skills-182-2ea44f.svg)](#-スキルカタログ)
+[![Skills](https://img.shields.io/badge/skills-187-2ea44f.svg)](#-スキルカタログ)
+[![Nature skills: 5 workflows](https://img.shields.io/badge/Nature%20skills-5%20workflows-1f6feb.svg)](./NATURE-SKILLS.md)
 [![Categories](https://img.shields.io/badge/categories-18-0969da.svg)](#-スキルカタログ)
 [![Agent support](https://img.shields.io/badge/agents-6-8250df.svg)](#-対応エージェント)
 [![License: MIT](https://img.shields.io/badge/license-MIT-f5c518.svg)](./LICENSE)
 
-Qinyan Academic Skills は、文献探索、科学論文執筆、研究費申請、バイオインフォマティクス、創薬、臨床研究、機械学習、データ分析など、再利用可能な研究能力を AI コーディングエージェントに提供します。本リポジトリには、Qinyan Academic 独自の 5 Skills を含む、**18 分野・182 Skills** が収録されています。
+Qinyan Academic Skills は、Claude Code、Codex、Cursor、Gemini CLI、OpenClaw、OpenCode に再利用可能な研究能力を提供します。本リポジトリには **18 分野・187 Skills** を収録し、その中核として Nature スタイルの科学論文執筆、学術推敲、投稿前レビュー、科学可視化、統計報告を担う 5 Skills を提供します。
 
 コレクション全体のほか、ワークフローに必要な Skill、カテゴリ、対象ツール、インストール範囲だけを選択できます。
+
+---
+
+## 🧬 Nature スタイル科学論文スイート
+
+検証可能な科学的主張から投稿可能な原稿まで、独立または組み合わせて使える 5 Skills が支援します。
+
+| 論文工程 | Skill | 主な成果物 |
+| --- | --- | --- |
+| 論証と初稿 | [`qinyan-nature-writing`](./skills/沁言学术skills/qinyan-nature-writing/) | エビデンス主導の構成、各節の草稿、タイトル、要旨、投稿資料 |
+| 構成と言語の推敲 | [`qinyan-nature-polishing`](./skills/沁言学术skills/qinyan-nature-polishing/) | 科学的意味を保ち、過剰主張を抑えた簡潔な学術文章 |
+| 投稿前レビュー | [`qinyan-nature-review`](./skills/沁言学术skills/qinyan-nature-review/) | 安定した課題 ID を持つ、優先順位付きで追跡可能な指摘 |
+| 図と視覚的エビデンス | [`qinyan-nature-figures`](./skills/沁言学术skills/qinyan-nature-figures/) | 再現可能な複数パネル図、適切な書き出し、投稿前検査 |
+| 研究設計と統計 | [`qinyan-nature-statistics`](./skills/沁言学术skills/qinyan-nature-statistics/) | 推定対象を明確にした解析計画、報告監査、図表用結果 |
+
+Skill を 1 つインストール：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/LeonChaoX/qinyan-academic-skills/main/install.sh \
+  | bash -s -- --skill qinyan-nature-writing
+```
+
+タスクの振り分け、インストール方法、品質基準、プロンプト例は、[Nature Skills ワークフロー完全ガイド](./NATURE-SKILLS.md)を参照してください。
+
+> [!NOTE]
+> 「Nature スタイル」は編集および科学コミュニケーション上の目標を示します。本プロジェクトは Nature Portfolio または Springer Nature と提携・承認関係になく、掲載を保証するものではありません。
 
 ---
 
@@ -19,7 +46,7 @@ Qinyan Academic Skills は、文献探索、科学論文執筆、研究費申請
 
 | 機能 | 内容 |
 | --- | --- |
-| **幅広い研究領域** | 文献、執筆、生命科学、AI、統計、データベース、ラボワークフローを含む 182 Skills |
+| **幅広い研究領域** | 文献、執筆、生命科学、AI、統計、データベース、ラボワークフローを含む 187 Skills |
 | **エージェント間の移植性** | Claude Code、Cursor、Codex、Gemini CLI、OpenClaw、OpenCode に同じインストーラーで対応 |
 | **選択的インストール** | 全体、カテゴリ単位、または指定した Skill のみをインストール可能 |
 | **プロジェクト分離** | グローバルまたは現在のプロジェクト内だけにインストール可能 |
@@ -105,7 +132,7 @@ bash install.sh --help
 
 | ID | カテゴリ | Skills | 主な領域 |
 | :---: | --- | ---: | --- |
-| — | [Qinyan Academic Skills](./skills/沁言学术skills/) | 5 | 論文検索、分析、推敲、引用、研究テーマ分析 |
+| — | [Qinyan Academic Skills](./skills/沁言学术skills/) | 10 | 論文検索、分析、引用、Nature 向け執筆・レビュー・図表・統計 |
 | 01 | [文献探索と参考文献管理](./skills/01-论文检索与文献管理/) | 10 | 学術検索、レビュー、引用ワークフロー、文献データベース |
 | 02 | [科学執筆と学術コミュニケーション](./skills/02-科学写作与学术交流/) | 6 | 論文執筆、査読、研究計画、投稿テンプレート |
 | 03 | [学術発表と可視化](./skills/03-学术演示与可视化/) | 9 | スライド、ポスター、模式図、インフォグラフィック、科学図表 |
@@ -133,6 +160,11 @@ bash install.sh --help
 | `qinyan-paper-polish` | 意味を維持しながら中国語・英語の学術文章を改善 |
 | `qinyan-citation` | 文献を探索し、主要な学術スタイルで引用を整形 |
 | `qinyan-topic-analysis` | 研究テーマ、エビデンスの全体像、有望な方向性を分析 |
+| `qinyan-nature-writing` | エビデンスに基づく論証、論文章節、初回投稿資料を作成 |
+| `qinyan-nature-polishing` | 科学的意味を変えずに文章を再構成・翻訳・推敲 |
+| `qinyan-nature-review` | 概念・技術・エビデンスの視点から追跡可能な投稿前レビューを実施 |
+| `qinyan-nature-figures` | 再現可能な投稿品質の科学図表を設計・出力・事前検証 |
+| `qinyan-nature-statistics` | 研究デザインを踏まえた統計計画・解析・監査・報告 |
 
 ---
 
@@ -141,7 +173,7 @@ bash install.sh --help
 | 目的 | 推奨 Skills |
 | --- | --- |
 | 文献検索とエビデンス整理 | `qinyan-paper-search`、`openalex-database`、`pubmed-database`、`literature-review` |
-| 論文の執筆と改稿 | `scientific-writing`、`qinyan-paper-polish`、`venue-templates`、`peer-review` |
+| 論文の執筆と改稿 | `qinyan-nature-writing`、`qinyan-nature-polishing`、`qinyan-nature-review`、`venue-templates` |
 | 研究費申請と研究計画 | `nsfc-proposal`、`nssfc-proposal`、`research-grants`、`research-proposal` |
 | 学術スライドとポスター | `paper-slide-deck`、`scientific-slides`、`latex-posters`、`pptx-posters` |
 | バイオインフォマティクスとオミクス | `biopython`、`scanpy`、`pydeseq2`、`scvi-tools`、`gget` |
@@ -168,6 +200,7 @@ bash install.sh --help
 
 - [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — 幅広い科学研究 Skills コレクション
 - [luwill/research-skills](https://github.com/luwill/research-skills) — 学術スライド、文献レビュー、研究計画のワークフロー
+- [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills) — Nature 向けワークフローの Apache-2.0 アーキテクチャを参考にし、Qinyan 版は独自に再設計
 - Qinyan Academic — 論文検索、論文分析、学術文章の推敲、引用探索、研究テーマ分析
 
 各 Skill の出典とライセンス情報は、対応する `SKILL.md` に保持されています。
